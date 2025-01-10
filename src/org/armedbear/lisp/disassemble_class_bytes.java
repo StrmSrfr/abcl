@@ -72,7 +72,7 @@ public final class disassemble_class_bytes extends Primitive
                 }                        
                 ShellCommand sc = new ShellCommand(command.toString(), null, null);
                 sc.run();
-                file.delete();
+                file.deleteOnExit();
                 return new SimpleString(sc.getOutput());
             } catch (IOException e) {
                 Debug.trace(e);
